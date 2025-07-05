@@ -15,6 +15,7 @@
             --accent-color: #E5B80B; /* Gold accent */
             --dark-color: #2A2118;
             --light-color: #F9F5F0;
+            --transition: all 0.3s ease;
         }
         
         body {
@@ -25,19 +26,16 @@
         }
         
         .navbar {
-            background-color:white;
+            background-color: white;
             box-shadow: 0 2px 15px rgba(0,0,0,0.1);
-            padding: 15px 0;
-            height:80px;
+            padding: 10px 0;
+            height: auto;
         }
         
         .logo {
-            height: 70px;
-            transition: all 0.3s ease;
-            font-size: 22px;
-            width:100px;
-            align-items: left;
-            border-radius: 60px 60px 60px 60px;
+            height: 60px;
+            transition: var(--transition);
+            border-radius: 60px;
         }
         
         .navbar-brand img:hover {
@@ -47,10 +45,10 @@
         .nav-link {
             color: var(--dark-color);
             font-weight: 500;
-            font-size:20px;
-            margin: 0 10px;
+            margin: 0 8px;
             position: relative;
-            transition: all 0.3s ease;
+            transition: var(--transition);
+            font-size: 16px;
         }
         
         .nav-link:hover {
@@ -72,28 +70,39 @@
             width: 100%;
         }
         
+        /* Mobile menu styling */
+        .navbar-toggler {
+            border: none;
+            padding: 0;
+        }
+        
+        .navbar-toggler:focus {
+            box-shadow: none;
+        }
+        
         .hero-section {
             background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://cdn.shopify.com/s/files/1/0491/2165/6981/files/Eco-Friendly_and_Sustainable_480x480.webp?v=1733402305');
             background-size: cover;
             background-position: center;
-            height: 80vh;
+            min-height: 85vh;
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
             text-align: center;
+            padding: 20px;
         }
         
         .hero-title {
-            font-size: 3.5rem;
+            font-size: 2.8rem;
             font-weight: 700;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
         }
         
         .hero-subtitle {
-            font-size: 1.5rem;
-            margin-bottom: 30px;
+            font-size: 1.3rem;
+            margin-bottom: 25px;
             text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
         }
         
@@ -102,7 +111,7 @@
             border: none;
             padding: 12px 30px;
             font-weight: 500;
-            transition: all 0.3s ease;
+            transition: var(--transition);
         }
         
         .btn-primary:hover {
@@ -112,10 +121,10 @@
         }
         
         .section-title {
-            font-size: 2.5rem;
+            font-size: 2.3rem;
             font-weight: 700;
             color: var(--primary-color);
-            margin-bottom: 30px;
+            margin-bottom: 25px;
             position: relative;
             display: inline-block;
         }
@@ -131,20 +140,23 @@
         }
         
         .menu-categories {
-            margin: 40px 0;
+            margin: 30px 0;
+            flex-wrap: wrap;
+            justify-content: center;
         }
         
         .category-btn {
             background: none;
             border: none;
-            font-size: 1.1rem;
+            font-size: 1rem;
             font-weight: 500;
             color: var(--dark-color);
-            margin: 0 15px;
-            padding: 10px 20px;
+            margin: 5px;
+            padding: 8px 15px;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: var(--transition);
             position: relative;
+            border-radius: 20px;
         }
         
         .category-btn::after {
@@ -160,6 +172,7 @@
         
         .category-btn:hover, .category-btn.active {
             color: var(--primary-color);
+            background: rgba(196, 164, 132, 0.1);
         }
         
         .category-btn:hover::after, .category-btn.active::after {
@@ -168,9 +181,9 @@
         
         .menu-container {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            column-gap: 30px;
-            padding: 20px;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+            padding: 15px;
             max-width: 1200px;
             margin: 0 auto;
         }
@@ -179,44 +192,44 @@
             background: white;
             border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: var(--transition);
             display: none; /* Hidden by default, shown by JS filtering */
         }
         
         .product-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+            transform: translateY(-8px);
+            box-shadow: 0 12px 25px rgba(0,0,0,0.15);
         }
         
         .product-img {
             width: 100%;
-            height: 250px;
+            height: 220px;
             object-fit: cover;
             transition: all 0.5s ease;
         }
         
         .product-card:hover .product-img {
-            transform: scale(1.05);
+            transform: scale(1.03);
         }
         
         .card-content {
-            padding: 20px;
+            padding: 18px;
             text-align: center;
         }
         
         .card-content h4 {
-            font-size: 1.3rem;
+            font-size: 1.25rem;
             font-weight: 600;
             color: var(--primary-color);
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
         
         .price {
-            font-size: 1.2rem;
+            font-size: 1.15rem;
             font-weight: 700;
             color: var(--dark-color);
-            margin-bottom: 15px;
+            margin-bottom: 12px;
         }
         
         .card_button {
@@ -226,7 +239,7 @@
             padding: 10px 25px;
             border-radius: 5px;
             font-weight: 500;
-            transition: all 0.3s ease;
+            transition: var(--transition);
             cursor: pointer;
             width: 100%;
         }
@@ -234,23 +247,36 @@
         .card_button:hover {
             background-color: var(--dark-color);
         }
+        
+        /* About Section */
+        .about-img {
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            max-width: 100%;
+            height: auto;
+        }
+        
         /* Footer */
         .footer {
             background: var(--dark-color);
             color: rgba(255, 255, 255, 0.8);
-            padding: 80px 0 08;
+            padding: 60px 0 0;
         }
         
         .footer-logo {
-            width: 80px;
-            margin-bottom: 20px;
+            width: 100px;
+            margin-bottom: 15px;
+            border-radius: 50%;
+            height: 100px;
+            object-fit: cover;
         }
         
         .footer h5 {
             color: white;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
             position: relative;
-            padding-bottom: 15px;
+            padding-bottom: 10px;
+            font-size: 1.3rem;
         }
         
         .footer h5::after {
@@ -269,7 +295,7 @@
         }
         
         .footer-links li {
-            margin-bottom: 12px;
+            margin-bottom: 10px;
         }
         
         .footer-links a {
@@ -286,31 +312,34 @@
         
         .footer-contact p {
             display: flex;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
+            align-items: flex-start;
         }
         
         .footer-contact i {
             color: var(--accent-color);
-            margin-right: 15px;
+            margin-right: 12px;
             min-width: 20px;
+            margin-top: 4px;
         }
         
-        
-       .social-links {
+        .social-links {
             display: flex;
-            margin-top: 20px;
+            margin-top: 15px;
+            flex-wrap: wrap;
         }
         
         .social-links a {
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 40px;
-            height: 40px;
+            width: 38px;
+            height: 38px;
             background: rgba(255, 255, 255, 0.1);
             color: white;
             border-radius: 50%;
-            margin-right: 10px;
+            margin-right: 8px;
+            margin-bottom: 8px;
             transition: var(--transition);
         }
         
@@ -321,74 +350,55 @@
         
         .copyright {
             background: rgba(0, 0, 0, 0.2);
-            padding: 20px 0;
-            margin-top: 60px;
+            padding: 15px 0;
+            margin-top: 50px;
             text-align: center;
+            font-size: 0.9rem;
         }
         
-        /* Responsive adjustments */
-        @media (max-width: 768px) {
-            .hero-title {
-                font-size: 2.5rem;
-            }
-            
-            .hero-subtitle {
-                font-size: 1.2rem;
-            }
-            
-            .section-title {
-                font-size: 2rem;
-            }
-            
-            .category-btn {
-                margin: 5px;
-                padding: 8px 15px;
-                font-size: 1rem;
-            }
-        }
-        
-        /* Shopping Cart Styles */
+        /* Shopping Cart */
         .cart-container {
             display: none;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 15px;
         }
         
         .cart-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 30px;
-            padding-bottom: 15px;
+            margin-bottom: 25px;
+            padding-bottom: 12px;
             border-bottom: 2px solid var(--accent-color);
         }
         
         .cart-title {
-            font-size: 2rem;
+            font-size: 1.8rem;
             color: var(--primary-color);
         }
         
         .cart-items {
-            margin-bottom: 30px;
+            margin-bottom: 25px;
         }
         
         .cart-item {
             display: flex;
             align-items: center;
-            padding: 20px;
+            padding: 18px;
             background: white;
             border-radius: 10px;
-            margin-bottom: 15px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            margin-bottom: 12px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
         }
         
         .cart-item-image {
-            width: 100px;
-            height: 100px;
-            border-radius: 10px;
+            width: 90px;
+            height: 90px;
+            border-radius: 8px;
             overflow: hidden;
-            margin-right: 20px;
+            margin-right: 15px;
+            flex-shrink: 0;
         }
         
         .cart-item-image img {
@@ -402,7 +412,7 @@
         }
         
         .cart-item-name {
-            font-size: 1.2rem;
+            font-size: 1.15rem;
             font-weight: 600;
             color: var(--primary-color);
             margin-bottom: 5px;
@@ -411,42 +421,44 @@
         .cart-item-price {
             font-weight: 600;
             color: var(--dark-color);
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
         
         .cart-item-controls {
             display: flex;
             align-items: center;
+            flex-wrap: wrap;
         }
         
         .quantity-btn {
-            width: 30px;
-            height: 30px;
+            width: 28px;
+            height: 28px;
             background: var(--light-color);
             border: none;
             border-radius: 5px;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             cursor: pointer;
         }
         
         .quantity-input {
-            width: 50px;
-            height: 30px;
+            width: 45px;
+            height: 28px;
             text-align: center;
             border: 1px solid #ddd;
             border-radius: 5px;
-            margin: 0 10px;
+            margin: 0 8px;
         }
         
         .remove-btn {
             background: #ff6b6b;
             color: white;
             border: none;
-            padding: 5px 15px;
+            padding: 4px 12px;
             border-radius: 5px;
             cursor: pointer;
-            margin-left: 15px;
-            transition: all 0.3s;
+            margin-left: 12px;
+            transition: var(--transition);
+            font-size: 0.9rem;
         }
         
         .remove-btn:hover {
@@ -456,40 +468,44 @@
         .cart-summary {
             background: white;
             border-radius: 10px;
-            padding: 25px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            padding: 20px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
         }
         
         .summary-row {
             display: flex;
             justify-content: space-between;
-            margin-bottom: 15px;
-            padding-bottom: 10px;
+            margin-bottom: 12px;
+            padding-bottom: 8px;
             border-bottom: 1px dashed #ddd;
         }
         
         .total-row {
-            font-size: 1.3rem;
+            font-size: 1.25rem;
             font-weight: 700;
             color: var(--primary-color);
-            margin-top: 20px;
-            padding-top: 10px;
+            margin-top: 18px;
+            padding-top: 8px;
             border-top: 2px solid var(--accent-color);
         }
         
         .cart-actions {
             display: flex;
             justify-content: space-between;
-            margin-top: 30px;
+            margin-top: 25px;
+            flex-wrap: wrap;
+            gap: 10px;
         }
         
         .cart-btn {
-            padding: 12px 30px;
+            padding: 10px 25px;
             border: none;
             border-radius: 5px;
             font-weight: 600;
             cursor: pointer;
-            transition: all 0.3s;
+            transition: var(--transition);
+            flex: 1;
+            min-width: 180px;
         }
         
         .continue-btn {
@@ -513,7 +529,7 @@
         
         .cart-icon {
             position: relative;
-            margin-left: 20px;
+            margin-left: 15px;
         }
         
         .cart-count {
@@ -534,7 +550,7 @@
         
         .back-to-menu {
             display: block;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             color: var(--primary-color);
             font-weight: 600;
             cursor: pointer;
@@ -546,43 +562,193 @@
         
         .empty-cart {
             text-align: center;
-            padding: 50px 20px;
+            padding: 40px 15px;
             background: white;
             border-radius: 10px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
         }
         
         .empty-cart i {
-            font-size: 4rem;
+            font-size: 3.5rem;
             color: #ddd;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
         
         .order-confirmation {
             display: none;
             text-align: center;
-            padding: 50px;
+            padding: 40px 20px;
             background: white;
             border-radius: 10px;
-            box-shadow: 0 3px 15px rgba(0,0,0,0.1);
-            margin: 30px auto;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+            margin: 25px auto;
             max-width: 600px;
         }
+        
         .order-confirmation i {
-            font-size: 4rem;
+            font-size: 3.5rem;
             color: #4CAF50;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
         
         .confirmation-title {
-            font-size: 2rem;
+            font-size: 1.8rem;
             color: var(--primary-color);
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
         
         .confirmation-message {
-            margin-bottom: 30px;
-            font-size: 1.1rem;
+            margin-bottom: 25px;
+            font-size: 1.05rem;
+        }
+        
+        /* Back to Top */
+        .back-to-top {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: var(--primary-color);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 50px;
+            font-size: 1.3rem;
+            z-index: 99;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+            transition: var(--transition);
+        }
+        
+        .back-to-top:hover {
+            background: var(--dark-color);
+            transform: translateY(-3px);
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.2rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .nav-link {
+                font-size: 1rem;
+                padding: 8px 0;
+            }
+            
+            .logo {
+                height: 50px;
+            }
+            
+            .navbar {
+                padding: 8px 0;
+            }
+            
+            .category-btn {
+                font-size: 0.9rem;
+                padding: 6px 12px;
+            }
+            
+            .product-card {
+                max-width: 350px;
+                margin: 0 auto;
+            }
+            
+            .cart-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .cart-item-image {
+                width: 100%;
+                height: 150px;
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+            
+            .cart-item-controls {
+                margin-top: 10px;
+            }
+            
+            .cart-btn {
+                min-width: 100%;
+            }
+            
+            .footer h5 {
+                font-size: 1.2rem;
+                margin-top: 25px;
+            }
+            
+            .footer-logo {
+                width: 80px;
+                height: 80px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero-section {
+                min-height: 70vh;
+            }
+            
+            .hero-title {
+                font-size: 1.8rem;
+            }
+            
+            .menu-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .cart-actions {
+                flex-direction: column;
+            }
+            
+            .cart-btn {
+                width: 100%;
+            }
+            
+            .footer-contact p {
+                font-size: 0.9rem;
+            }
+        }
+        
+        /* TV Optimizations */
+        @media (min-width: 1600px) {
+            .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+                max-width: 1500px;
+            }
+            
+            .hero-title {
+                font-size: 4rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.8rem;
+            }
+            
+            .section-title {
+                font-size: 3rem;
+            }
+            
+            .nav-link {
+                font-size: 1.3rem;
+            }
+            
+            .product-card {
+                max-width: none;
+            }
+            
+            .footer {
+                font-size: 1.1rem;
+            }
         }
     </style>
 </head>
@@ -590,26 +756,25 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light sticky-top">
         <div class="container">
-            <img src="logo.png" alt="Silver Garden Cafeteria" class="logo">
+            <a class="navbar-brand" href="#">
+                <img src="https://via.placeholder.com/100x100?text=Logo" alt="Silver Garden Cafeteria" class="logo">
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="web2.html" id="home-link">Home</a>
+                        <a class="nav-link" href="#" id="home-link">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#menu" id="menu-link">Menu</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="about.html">About Us</a>
+                        <a class="nav-link" href="#about">About Us</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="services.html">Services</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="contact.html">Contact</a>
+                        <a class="nav-link" href="#contact">Contact</a>
                     </li>
                     <li class="nav-item cart-icon">
                         <a class="nav-link" href="#" id="cart-link">
@@ -642,7 +807,7 @@
                     Discover our selection of beverages and treats here.....</p>
                 
                 <!-- Category Filter -->
-                <div class="text-center menu-categories">
+                <div class="d-flex menu-categories">
                     <button class="category-btn active" data-category="all">All Items</button>
                     <button class="category-btn" data-category="coffee">Coffee</button>
                     <button class="category-btn" data-category="tea">Tea</button>
@@ -668,12 +833,59 @@
                         <p>Every cup we serve reflects our commitment to quality, sustainability, and the art of coffee making.</p>
                     </div>
                     <div class="col-lg-6">
-                        <img src="https://images.unsplash.com/photo-1461988091159-192b6df7054f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Our Coffee Shop" class="img-fluid rounded shadow">
+                        <img src="https://images.unsplash.com/photo-1461988091159-192b6df7054f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Our Coffee Shop" class="about-img">
                     </div>
                 </div>
             </div>
         </section>
-        <br><br>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-5">
+            <div class="container">
+                <h2 class="text-center section-title">Contact Us</h2>
+                <div class="row mt-5">
+                    <div class="col-md-6 mb-4 mb-md-0">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h5 class="card-title"><i class="fas fa-map-marker-alt me-2"></i> Our Location</h5>
+                                <p class="card-text">Patel Nagar, Malout, Punjab - 152107</p>
+                                
+                                <h5 class="card-title mt-4"><i class="fas fa-phone-alt me-2"></i> Phone</h5>
+                                <p class="card-text">+91 9855307050</p>
+                                
+                                <h5 class="card-title mt-4"><i class="fas fa-envelope me-2"></i> Email</h5>
+                                <p class="card-text">arorapoonam104@gmail.com</p>
+                                
+                                <h5 class="card-title mt-4"><i class="fas fa-clock me-2"></i> Opening Hours</h5>
+                                <p class="card-text">Mon-Sat: 8:00 AM - 8:00 PM<br>Sunday: 9:00 AM - 6:00 PM</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h5 class="card-title">Send us a Message</h5>
+                                <form>
+                                    <div class="mb-3">
+                                        <input type="text" class="form-control" placeholder="Your Name" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <input type="email" class="form-control" placeholder="Your Email" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <input type="text" class="form-control" placeholder="Subject">
+                                    </div>
+                                    <div class="mb-3">
+                                        <textarea class="form-control" rows="4" placeholder="Your Message" required></textarea>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary w-100">Send Message</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </div>
     
     <!-- Cart Section -->
@@ -719,31 +931,30 @@
         <p>Order Number: <strong>#SG-<span id="order-number">0000</span></strong></p>
         <button class="btn btn-primary mt-4" id="new-order-btn">Place New Order</button>
     </div>
-    <br><br><br>
 
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="row g-5">
                 <div class="col-lg-4 col-md-6">
-                    <img src="logo.png" alt="Logo" class="footer-logo" style="border-radius: 100px 100px 100px 100px; height:200px;width: 200px;">
-                    <h2>Silver Garden Cafeteria</h2>
-                    <span></span>
+                    <img src="https://via.placeholder.com/100x100?text=Logo" alt="Logo" class="footer-logo">
+                    <h3>Silver Garden Cafeteria</h3>
+                    <p>Premium coffee and beverages crafted with passion in the heart of Malout.</p>
                     <div class="social-links">
                         <a href="https://www.facebook.com"><i class="fab fa-facebook-f"></i></a>
                         <a href="https://www.twitter.com"><i class="fab fa-twitter"></i></a>
                         <a href="https://www.instagram.com"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.youtube.com"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
                 
                 <div class="col-lg-2 col-md-6">
                     <h5>Quick Links</h5>
                     <ul class="footer-links">
-                        <li><a href="web2.html">Home</a></li>
-                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
                         <li><a href="#menu">Menu</a></li>
-                        <li><a href="services.html">Our Services</a></li>
-                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="#contact">Contact Us</a></li>
                     </ul>
                 </div>
                 
@@ -783,13 +994,13 @@
             </div>
             
             <div class="copyright">
-                <marquee><p>&copy; 2023 Silver Garden Cafeteria. All Rights Reserved | Designed with <i class="fas fa-heart" style="color: #e25555;"></i> in Malout</p></marquee>
+                <p>&copy; 2023 Silver Garden Cafeteria. All Rights Reserved | Designed with <i class="fas fa-heart" style="color: #e25555;"></i> in Malout</p>
             </div>
         </div>
     </footer>
     
     <!-- Back to Top Button -->
-    <a href="#" class="back-to-top" style="display: none; position: fixed; bottom: 20px; right: 20px; background: var(--primary-color); color: white; width: 50px; height: 50px; border-radius: 50%; text-align: center; line-height: 50px; font-size: 1.5rem; z-index: 99;">
+    <a href="#" class="back-to-top">
         <i class="fas fa-arrow-up"></i>
     </a>
     
