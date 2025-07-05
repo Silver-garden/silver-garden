@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us | Silver Garden Cafeteria</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Merienda:wght@400;700&display=swap" rel="stylesheet">
     <style>
@@ -24,34 +23,26 @@
             overflow-x: hidden;
         }
         
-           /* Navigation */
+        /* Navigation */
         .navbar {
-            background-color:white;
+            background-color: white;
             box-shadow: 0 2px 15px rgba(0,0,0,0.1);
-            padding: 15px 0;
-            height:80px;
+            padding: 0.8rem 0;
         }
         
         .logo {
-            height: 70px;
+            height: 60px;
+            border-radius: 50%;
             transition: all 0.3s ease;
-            font-size: 22px;
-            width:100px;
-            align-items: left;
-            border-radius: 60px 60px 60px 60px;
-        }
-        
-        .navbar-brand img:hover {
-            transform: scale(1.05);
         }
         
         .nav-link {
             color: var(--dark-color);
             font-weight: 500;
-            font-size:20px;
-            margin: 0 10px;
+            margin: 0 0.5rem;
             position: relative;
             transition: all 0.3s ease;
+            font-size: 1rem;
         }
         
         .nav-link:hover {
@@ -72,56 +63,23 @@
         .nav-link:hover::after {
             width: 100%;
         }
-        .btn-primary {
-            background-color: var(--primary-color);
+        
+        .navbar-toggler {
             border: none;
-            padding: 12px 30px;
-            font-weight: 500;
-            transition: all 0.3s ease;
+            padding: 0.25rem;
         }
         
-        .btn-primary:hover {
-            background-color: var(--dark-color);
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-        .page-header {
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7));
-            background-size: cover;
-            background-position: center;
-            height: 50vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            text-align: center;
-            margin-bottom: 60px;
+        .navbar-toggler:focus {
+            box-shadow: none;
         }
         
-        .page-title {
-            font-family: 'Merienda', cursive;
-            font-size: 3.5rem;
-            font-weight: 700;
-            text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
-        }
-        
-        .title-divider {
-            width: 100px;
-            height: 3px;
-            background-color: var(--accent-color);
-            margin: 20px auto;
-        }
-        
-        .about-section {
-            padding: 80px 0;
-        }
-        
+        /* About Sections */
         .section-title {
             font-family: 'Merienda', cursive;
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             font-weight: 700;
             color: var(--primary-color);
-            margin-bottom: 30px;
+            margin-bottom: 1.5rem;
             position: relative;
             display: inline-block;
         }
@@ -136,22 +94,26 @@
             background-color: var(--accent-color);
         }
         
+        .about-section {
+            padding: 3rem 0;
+        }
+        
         .value-card {
             border: none;
             border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
             transition: all 0.3s ease;
-            margin-bottom: 30px;
+            margin-bottom: 1.5rem;
             background-color: white;
             height: 100%;
             text-align: center;
-            padding: 30px 20px;
+            padding: 1.5rem;
         }
         
         .value-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+            transform: translateY(-8px);
+            box-shadow: 0 12px 25px rgba(0,0,0,0.15);
             background: linear-gradient(135deg, var(--primary-color) 0%, var(--dark-color) 100%);
             color: white;
         }
@@ -162,37 +124,40 @@
         }
         
         .value-icon {
-            font-size: 3.5rem;
+            font-size: 2.5rem;
             color: var(--primary-color);
-            margin-bottom: 20px;
+            margin-bottom: 1rem;
             transition: all 0.3s ease;
         }
         
         .value-title {
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             font-weight: 600;
-            margin-bottom: 15px;
+            margin-bottom: 0.8rem;
         }
         
         .story-section {
             background-color: white;
-            padding: 80px 0;
-            position: relative;
+            padding: 3rem 0;
         }
         
         .story-image {
             border-radius: 10px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
             transition: all 0.3s ease;
+            width: 100%;
+            height: auto;
+            max-height: 400px;
+            object-fit: cover;
         }
         
         .story-image:hover {
             transform: scale(1.02);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
         }
         
         .team-section {
-            padding: 80px 0;
+            padding: 3rem 0;
             background-color: var(--light-color);
         }
         
@@ -200,68 +165,76 @@
             border: none;
             border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
             transition: all 0.3s ease;
-            margin-bottom: 30px;
+            margin-bottom: 1.5rem;
             background-color: white;
+            height: 100%;
         }
         
         .team-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
         }
         
         .team-img {
-            height: 350px;
+            height: 300px;
             object-fit: cover;
+            width: 100%;
         }
         
         .team-name {
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             font-weight: 600;
             color: var(--primary-color);
-            margin-top: 15px;
+            margin-top: 1rem;
+            padding: 0 1rem;
         }
         
         .team-position {
             color: var(--secondary-color);
             font-weight: 500;
+            padding: 0 1rem 1rem;
         }
         
         .contact-btn {
             background-color: var(--primary-color);
             color: white;
             border: none;
-            padding: 12px 30px;
+            padding: 0.8rem 1.8rem;
             font-weight: 500;
-            letter-spacing: 1px;
-            text-transform: uppercase;
             transition: all 0.3s ease;
-            margin-top: 30px;
+            text-decoration: none;
+            display: inline-block;
+            border-radius: 5px;
         }
         
         .contact-btn:hover {
             background-color: var(--dark-color);
             transform: translateY(-3px);
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            color: white;
         }
         
-          .footer {
+        /* Footer */
+        .footer {
             background: var(--dark-color);
             color: rgba(255, 255, 255, 0.8);
-            padding: 80px 0 0;
+            padding: 3rem 0 0;
         }
         
         .footer-logo {
             width: 80px;
-            margin-bottom: 20px;
+            margin-bottom: 1.5rem;
+            border-radius: 50%;
         }
         
         .footer h5 {
             color: white;
-            margin-bottom: 25px;
+            margin-bottom: 1.5rem;
             position: relative;
-            padding-bottom: 15px;
+            padding-bottom: 0.8rem;
+            font-size: 1.2rem;
         }
         
         .footer h5::after {
@@ -280,13 +253,13 @@
         }
         
         .footer-links li {
-            margin-bottom: 12px;
+            margin-bottom: 0.8rem;
         }
         
         .footer-links a {
             color: rgba(255, 255, 255, 0.7);
             text-decoration: none;
-            transition: var(--transition);
+            transition: all 0.3s ease;
             display: block;
         }
         
@@ -297,32 +270,33 @@
         
         .footer-contact p {
             display: flex;
-            margin-bottom: 15px;
+            margin-bottom: 1rem;
+            align-items: flex-start;
         }
         
         .footer-contact i {
             color: var(--accent-color);
-            margin-right: 15px;
+            margin-right: 0.8rem;
             min-width: 20px;
+            margin-top: 4px;
         }
         
-        
-       .social-links {
+        .social-links {
             display: flex;
-            margin-top: 20px;
+            margin-top: 1.5rem;
         }
         
         .social-links a {
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 40px;
-            height: 40px;
+            width: 38px;
+            height: 38px;
             background: rgba(255, 255, 255, 0.1);
             color: white;
             border-radius: 50%;
-            margin-right: 10px;
-            transition: var(--transition);
+            margin-right: 0.8rem;
+            transition: all 0.3s ease;
         }
         
         .social-links a:hover {
@@ -332,98 +306,54 @@
         
         .copyright {
             background: rgba(0, 0, 0, 0.2);
-            padding: 20px 0;
-            margin-top: 60px;
+            padding: 1.2rem 0;
+            margin-top: 3rem;
             text-align: center;
+            font-size: 0.9rem;
         }
-        
-        .back-to-top {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 50px;
-            height: 50px;
-            background-color: var(--primary-color);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2rem;
-            cursor: pointer;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s ease;
-            z-index: 999;
-        }
-        
-        .back-to-top.active {
-            opacity: 1;
-            visibility: visible;
-        }
-        
-        .back-to-top:hover {
-            background-color: var(--dark-color);
-            transform: translateY(-5px);
-        }
-        
-        /* Responsive adjustments */
-        @media (max-width: 768px) {
-            .page-title {
-                font-size: 2.5rem;
-            }
-            
-            .section-title {
-                font-size: 2rem;
-            }
-            
-            .page-header {
-                height: 40vh;
-                margin-bottom: 30px;
-            }
-        }
-        /* Shopping Cart Styles */
+        /* Shopping Cart */
         .cart-container {
             display: none;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 15px;
         }
         
         .cart-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 30px;
-            padding-bottom: 15px;
+            margin-bottom: 25px;
+            padding-bottom: 12px;
             border-bottom: 2px solid var(--accent-color);
         }
         
         .cart-title {
-            font-size: 2rem;
+            font-size: 1.8rem;
             color: var(--primary-color);
         }
         
         .cart-items {
-            margin-bottom: 30px;
+            margin-bottom: 25px;
         }
         
         .cart-item {
             display: flex;
             align-items: center;
-            padding: 20px;
+            padding: 18px;
             background: white;
             border-radius: 10px;
-            margin-bottom: 15px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            margin-bottom: 12px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
         }
         
         .cart-item-image {
-            width: 100px;
-            height: 100px;
-            border-radius: 10px;
+            width: 90px;
+            height: 90px;
+            border-radius: 8px;
             overflow: hidden;
-            margin-right: 20px;
+            margin-right: 15px;
+            flex-shrink: 0;
         }
         
         .cart-item-image img {
@@ -437,7 +367,7 @@
         }
         
         .cart-item-name {
-            font-size: 1.2rem;
+            font-size: 1.15rem;
             font-weight: 600;
             color: var(--primary-color);
             margin-bottom: 5px;
@@ -446,42 +376,44 @@
         .cart-item-price {
             font-weight: 600;
             color: var(--dark-color);
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
         
         .cart-item-controls {
             display: flex;
             align-items: center;
+            flex-wrap: wrap;
         }
         
         .quantity-btn {
-            width: 30px;
-            height: 30px;
+            width: 28px;
+            height: 28px;
             background: var(--light-color);
             border: none;
             border-radius: 5px;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             cursor: pointer;
         }
         
         .quantity-input {
-            width: 50px;
-            height: 30px;
+            width: 45px;
+            height: 28px;
             text-align: center;
             border: 1px solid #ddd;
             border-radius: 5px;
-            margin: 0 10px;
+            margin: 0 8px;
         }
         
         .remove-btn {
             background: #ff6b6b;
             color: white;
             border: none;
-            padding: 5px 15px;
+            padding: 4px 12px;
             border-radius: 5px;
             cursor: pointer;
-            margin-left: 15px;
-            transition: all 0.3s;
+            margin-left: 12px;
+            transition: var(--transition);
+            font-size: 0.9rem;
         }
         
         .remove-btn:hover {
@@ -491,40 +423,44 @@
         .cart-summary {
             background: white;
             border-radius: 10px;
-            padding: 25px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            padding: 20px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
         }
         
         .summary-row {
             display: flex;
             justify-content: space-between;
-            margin-bottom: 15px;
-            padding-bottom: 10px;
+            margin-bottom: 12px;
+            padding-bottom: 8px;
             border-bottom: 1px dashed #ddd;
         }
         
         .total-row {
-            font-size: 1.3rem;
+            font-size: 1.25rem;
             font-weight: 700;
             color: var(--primary-color);
-            margin-top: 20px;
-            padding-top: 10px;
+            margin-top: 18px;
+            padding-top: 8px;
             border-top: 2px solid var(--accent-color);
         }
         
         .cart-actions {
             display: flex;
             justify-content: space-between;
-            margin-top: 30px;
+            margin-top: 25px;
+            flex-wrap: wrap;
+            gap: 10px;
         }
         
         .cart-btn {
-            padding: 12px 30px;
+            padding: 10px 25px;
             border: none;
             border-radius: 5px;
             font-weight: 600;
             cursor: pointer;
-            transition: all 0.3s;
+            transition: var(--transition);
+            flex: 1;
+            min-width: 180px;
         }
         
         .continue-btn {
@@ -548,7 +484,7 @@
         
         .cart-icon {
             position: relative;
-            margin-left: 20px;
+            margin-left: 15px;
         }
         
         .cart-count {
@@ -569,7 +505,7 @@
         
         .back-to-menu {
             display: block;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             color: var(--primary-color);
             font-weight: 600;
             cursor: pointer;
@@ -581,44 +517,151 @@
         
         .empty-cart {
             text-align: center;
-            padding: 50px 20px;
+            padding: 40px 15px;
             background: white;
             border-radius: 10px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
         }
         
         .empty-cart i {
-            font-size: 4rem;
+            font-size: 3.5rem;
             color: #ddd;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
         
         .order-confirmation {
             display: none;
             text-align: center;
-            padding: 50px;
+            padding: 40px 20px;
             background: white;
             border-radius: 10px;
-            box-shadow: 0 3px 15px rgba(0,0,0,0.1);
-            margin: 30px auto;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+            margin: 25px auto;
             max-width: 600px;
         }
         
         .order-confirmation i {
-            font-size: 4rem;
+            font-size: 3.5rem;
             color: #4CAF50;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
         
         .confirmation-title {
-            font-size: 2rem;
+            font-size: 1.8rem;
             color: var(--primary-color);
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
         
         .confirmation-message {
-            margin-bottom: 30px;
+            margin-bottom: 25px;
+            font-size: 1.05rem;
+        }
+        
+        
+        /* Back to top button */
+        .back-to-top {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            width: 45px;
+            height: 45px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             font-size: 1.1rem;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 999;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+        }
+        
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            background-color: var(--dark-color);
+            transform: translateY(-3px);
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 992px) {
+            .page-title {
+                font-size: 2.5rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .team-img {
+                height: 250px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .page-header {
+                min-height: 40vh;
+                margin-bottom: 2rem;
+            }
+            
+            .page-title {
+                font-size: 2.2rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .value-card {
+                padding: 1.2rem;
+            }
+            
+            .value-icon {
+                font-size: 2rem;
+            }
+            
+            .value-title {
+                font-size: 1.2rem;
+            }
+            
+            .team-img {
+                height: 220px;
+            }
+            
+            .footer h5 {
+                margin-top: 1.5rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .page-title {
+                font-size: 1.8rem;
+            }
+            
+            .section-title {
+                font-size: 1.6rem;
+            }
+            
+            .title-divider {
+                width: 80px;
+                margin: 1rem auto;
+            }
+            
+            .nav-link {
+                font-size: 0.95rem;
+                padding: 0.5rem 0;
+            }
+            
+            .team-img {
+                height: 200px;
+            }
         }
     </style>
 </head>
@@ -626,23 +669,25 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light sticky-top">
         <div class="container">
-            <img src="logo.png" alt="Silver Garden Cafeteria" class="logo">
+            <a class="navbar-brand" href="#">
+                <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Silver Garden Cafeteria" class="logo">
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html" id="home-link">Home</a>
+                        <a class="nav-link" href="index2.html">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html#menu" id="menu-link">Menu</a>
+                        <a class="nav-link" href="index2.html#menu">Menu</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="about.html">About Us</a>
+                        <a class="nav-link active" href="about.html">About Us</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="services.html">Services</a>
+                        <a class="nav-link" href="services.html">Our Services</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="contact.html">Contact</a>
@@ -657,6 +702,7 @@
             </div>
         </div>
     </nav>
+
     <!-- Our Values Section -->
     <section class="about-section">
         <div class="container">
@@ -701,14 +747,14 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-6 mb-4 mb-lg-0">
-                    <img src="https://images.unsplash.com/photo-1445116572660-236099ec97a0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Our Cafe" class="img-fluid story-image">
+                    <img src="https://images.unsplash.com/photo-1445116572660-236099ec97a0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Our Cafe" class="story-image">
                 </div>
                 <div class="col-lg-6">
                     <h2 class="section-title">Our Journey</h2>
                     <p>Founded in 2025 in the heart of Malout, Punjab, Silver Garden Cafeteria began as a small coffee stand with a big dream - to bring exceptional coffee experiences to our community.</p>
                     <p>What started as a humble kiosk has blossomed into a beloved local destination where coffee lovers gather to enjoy carefully sourced beans, expertly prepared beverages, and a warm, welcoming atmosphere.</p>
                     <p>Every cup we serve reflects our commitment to quality, sustainability, and the art of coffee making. We take pride in supporting local farmers and suppliers while delivering an authentic cafe experience.</p>
-                    <a href="contact.html" class="btn contact-btn">Visit Us Today</a>
+                    <a href="#" class="contact-btn mt-3">Visit Us Today</a>
                 </div>
             </div>
         </div>
@@ -720,73 +766,117 @@
             <h2 class="text-center section-title">Meet Our Team</h2>
             <p class="text-center mb-5">The passionate people behind your perfect cup</p>
             
-            <div class="row" style="display:flex; justify-content: space-evenly;">
-                <div class="col-lg-3 col-md-6 mb-4">
+            <div class="row justify-content-center">
+                <div class="col-lg-4 col-md-6 mb-4">
                     <div class="team-card">
-                        <img src="IMG-20250625-WA0002.jpg" class="card-img-top team-img" alt="Barista">
-                        <div class="card-body text-center">
-                            <h5 class="team-name">Ms.Palak</h5>
-                            <p class="team-position"></p>
+                        <img src="IMG-20250625-WA0002.jpg" class="team-img" alt="Barista">
+                        <div class="card-body">
+                            <h5 class="team-name">Miss. Palak</h5>
+                            
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 mb-4">
+                <div class="col-lg-4 col-md-6 mb-4">
                     <div class="team-card">
-                        <img src="IMG-20250624-WA0004.jpg" class="card-img-top team-img" alt="Barista" h>
-                        <div class="card-body text-center">
-                            <h5 class="team-name">Ms.Manju</h5>
-                            <p class="team-position"></p>
+                        <img src="IMG-20250624-WA0004.jpg" class="team-img" alt="Barista">
+                        <div class="card-body">
+                            <h5 class="team-name">Miss. Manju</h5>
+                           
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 mb-4">
+                <div class="col-lg-4 col-md-6 mb-4">
                     <div class="team-card">
-                        <img src="IMG-20250624-WA0006.jpg" class="card-img-top team-img" alt="Pastry Chef">
-                        <div class="card-body text-center">
-                            <h5 class="team-name">Ms.Mahima</h5>
-                            <p class="team-position"></p>
+                        <img src="IMG-20250624-WA0006.jpg" class="team-img" alt="Pastry Chef">
+                        <div class="card-body">
+                            <h5 class="team-name">Miss. Mahima</h5>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+    <!-- Cart Section -->
+    <div class="cart-container" id="cart-container">
+        <a class="back-to-menu" id="back-to-menu">
+            <i class="fas fa-arrow-left"></i> Back to Menu
+        </a>
+        
+        <div class="cart-header">
+            <h2 class="cart-title">Your Shopping Cart</h2>
+        </div>
+        
+        <div class="cart-items" id="cart-items">
+            <!-- Cart items will be loaded dynamically -->
+        </div>
+        
+        <div class="cart-summary">
+            <div class="summary-row">
+                <span>Subtotal:</span>
+                <span id="subtotal">₹0.00</span>
+            </div>
+            <div class="summary-row">
+                <span>Tax (5%):</span>
+                <span id="tax">₹0.00</span>
+            </div>
+            <div class="summary-row total-row">
+                <span>Total:</span>
+                <span id="total">₹0.00</span>
+            </div>
+        </div>
+        
+        <div class="cart-actions">
+            <button class="cart-btn continue-btn" id="continue-shopping">Continue Shopping</button>
+            <button class="cart-btn checkout-btn" id="place-order">Place Order</button>
+        </div>
+    </div>
 
-   <!-- Footer -->
+    <!-- Order Confirmation -->
+    <div class="order-confirmation" id="order-confirmation">
+        <i class="fas fa-check-circle"></i>
+        <h2 class="confirmation-title">Order Confirmed!</h2>
+        <p class="confirmation-message">Thank you for your order. Your beverages and treats are being prepared with care.</p>
+        <p>Order Number: <strong>#SG-<span id="order-number">0000</span></strong></p>
+        <button class="btn btn-primary mt-4" id="new-order-btn">Place New Order</button>
+    </div>
+
+
+    <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <div class="row g-5">
+            <div class="row g-4">
                 <div class="col-lg-4 col-md-6">
-                    <img src="logo.png" alt="Logo" class="footer-logo" style="border-radius: 100px 100px 100px 100px; height:200px;width: 200px;">
-                    <h2>Silver Garden Cafeteria</h2>
-                    <span></span>
+                    <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Logo" class="footer-logo">
+                    <h3>Silver Garden Cafeteria</h3>
+                    <p>Premium coffee and beverages crafted with passion in the heart of Malout.</p>
                     <div class="social-links">
                         <a href="https://www.facebook.com"><i class="fab fa-facebook-f"></i></a>
                         <a href="https://www.twitter.com"><i class="fab fa-twitter"></i></a>
-                        <a href="https://ww.instagram.com"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.instagram.com"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.youtube.com"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
                 
                 <div class="col-lg-2 col-md-6">
                     <h5>Quick Links</h5>
                     <ul class="footer-links">
-                        <li><a href="web2.html">Home</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="#menu">Menu</a></li>
-                        <li><a href="services.html">Our Services</a></li>
-                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Menu</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">Contact Us</a></li>
                     </ul>
                 </div>
                 
-               <div class="col-lg-3 col-md-6">
+                <div class="col-lg-3 col-md-6">
                     <h5>Popular Items</h5>
                     <ul class="footer-links">
-                        <li><a href="#menu">Fruit Cocktail</a></li>
-                        <li><a href="#menu">Mango Shake</a></li>
-                        <li><a href="#menu">Cappuccino</a></li>
-                        <li><a href="#menu">Cold Coffee</a></li>
-                        <li><a href="#menu">Soya chaap</a></li>
-                        <li><a href="#menu">Spring rolls</a></li>
+                        <li><a href="#">Fruit Cocktail</a></li>
+                        <li><a href="#">Mango Shake</a></li>
+                        <li><a href="#">Cappuccino</a></li>
+                        <li><a href="#">Cold Coffee</a></li>
+                        <li><a href="#">Soya chaap</a></li>
+                        <li><a href="#">Spring rolls</a></li>
                     </ul>
                 </div>
                 
@@ -814,9 +904,282 @@
             </div>
             
             <div class="copyright">
-                <marquee><p>&copy; 2023 Silver Garden Cafeteria. All Rights Reserved | Designed with <i class="fas fa-heart" style="color: #e25555;"></i> in Malout</p></marquee>
+                <p>&copy; 2023 Silver Garden Cafeteria. All Rights Reserved | Designed with <i class="fas fa-heart" style="color: #e25555;"></i> in Malout</p>
             </div>
         </div>
     </footer>
+
+    <!-- Back to top button -->
+    <div class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Back to top button functionality
+        const backToTopButton = document.querySelector('.back-to-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add('active');
+            } else {
+                backToTopButton.classList.remove('active');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Initialize Bootstrap tooltips
+        const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+        const tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+            return new bootstrap.Tooltip(tooltipTriggerEl);
+        });
+        // Add item to cart
+        function addToCart(productId) {
+            const product = menuItems.find(item => item.id === productId);
+            if (!product) return;
+            
+            const existingItem = cart.find(item => item.id === productId);
+            
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                cart.push({
+                    id: product.id,
+                    name: product.name,
+                    price: product.price,
+                    image: product.image,
+                    quantity: 1
+                });
+            }
+            
+            // Update localStorage
+            localStorage.setItem('cart', JSON.stringify(cart));
+            
+            // Update UI
+            updateCartCount();
+            
+            // Show notification
+            showNotification(`${product.name} added to cart!`);
+        }
+
+        // Show notification
+        function showNotification(message) {
+            // Create notification element
+            const notification = document.createElement('div');
+            notification.className = 'notification animate__animated animate__fadeInUp';
+            notification.innerHTML = `
+                <div style="position: fixed; bottom: 20px; right: 20px; background: white; padding: 15px 25px; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.2); z-index: 1000; display: flex; align-items: center;">
+                    <i class="fas fa-check-circle" style="color: #4CAF50; font-size: 1.5rem; margin-right: 10px;"></i>
+                    <span>${message}</span>
+                </div>
+            `;
+            
+            document.body.appendChild(notification);
+            
+            // Remove notification after 3 seconds
+            setTimeout(() => {
+                notification.remove();
+            }, 3000);
+        }
+
+        // Update cart count
+        function updateCartCount() {
+            const count = cart.reduce((total, item) => total + item.quantity, 0);
+            cartCountElement.textContent = count;
+        }
+
+        // Show cart
+        function showCart() {
+            mainContent.style.display = 'none';
+            cartContainer.style.display = 'block';
+            orderConfirmation.style.display = 'none';
+            renderCartItems();
+        }
+
+        // Show main content
+        function showMainContent() {
+            mainContent.style.display = 'block';
+            cartContainer.style.display = 'none';
+            orderConfirmation.style.display = 'none';
+        }
+
+        // Render cart items
+        function renderCartItems() {
+            cartItemsContainer.innerHTML = '';
+            
+            if (cart.length === 0) {
+                cartItemsContainer.innerHTML = `
+                    <div class="empty-cart">
+                        <i class="fas fa-shopping-cart"></i>
+                        <h3>Your cart is empty</h3>
+                        <p>Add some delicious coffee, tea or snacks!</p>
+                    </div>
+                `;
+                updateCartSummary();
+                return;
+            }
+            
+            cart.forEach((item, index) => {
+                const cartItem = document.createElement('div');
+                cartItem.className = 'cart-item';
+                cartItem.innerHTML = `
+                    <div class="cart-item-image">
+                        <img src="${item.image}" alt="${item.name}">
+                    </div>
+                    <div class="cart-item-details">
+                        <h4 class="cart-item-name">${item.name}</h4>
+                        <p class="cart-item-price">₹${item.price}</p>
+                        <div class="cart-item-controls">
+                            <button class="quantity-btn minus" data-index="${index}">-</button>
+                            <input type="number" class="quantity-input" value="${item.quantity}" min="1" data-index="${index}">
+                            <button class="quantity-btn plus" data-index="${index}">+</button>
+                            <button class="remove-btn" data-index="${index}">Remove</button>
+                        </div>
+                    </div>
+                `;
+                cartItemsContainer.appendChild(cartItem);
+            });
+            
+            // Add event listeners to quantity buttons
+            document.querySelectorAll('.minus').forEach(button => {
+                button.addEventListener('click', function() {
+                    const index = parseInt(this.dataset.index);
+                    updateQuantity(index, -1);
+                });
+            });
+            
+            document.querySelectorAll('.plus').forEach(button => {
+                button.addEventListener('click', function() {
+                    const index = parseInt(this.dataset.index);
+                    updateQuantity(index, 1);
+                });
+            });
+            
+            document.querySelectorAll('.quantity-input').forEach(input => {
+                input.addEventListener('change', function() {
+                    const index = parseInt(this.dataset.index);
+                    const newQuantity = parseInt(this.value);
+                    
+                    if (newQuantity > 0) {
+                        updateQuantity(index, newQuantity - cart[index].quantity);
+                    } else {
+                        this.value = cart[index].quantity;
+                    }
+                });
+            });
+            
+            document.querySelectorAll('.remove-btn').forEach(button => {
+                button.addEventListener('click', function() {
+                    const index = parseInt(this.dataset.index);
+                    removeItem(index);
+                });
+            });
+            
+            // Update cart summary
+            updateCartSummary();
+        }
+
+        // Update quantity
+        function updateQuantity(index, change) {
+            const newQuantity = cart[index].quantity + change;
+            
+            if (newQuantity < 1) {
+                removeItem(index);
+                return;
+            }
+            
+            cart[index].quantity = newQuantity;
+            localStorage.setItem('cart', JSON.stringify(cart));
+            renderCartItems();
+            updateCartCount();
+        }
+
+        // Remove item
+        function removeItem(index) {
+            cart.splice(index, 1);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            renderCartItems();
+            updateCartCount();
+        }
+
+        // Update cart summary
+        function updateCartSummary() {
+            const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            const tax = subtotal * 0.05;
+            const total = subtotal + tax;
+            
+            subtotalElement.textContent = `₹${subtotal.toFixed(2)}`;
+            taxElement.textContent = `₹${tax.toFixed(2)}`;
+            totalElement.textContent = `₹${total.toFixed(2)}`;
+        }
+
+        // Place order
+        function placeOrder() {
+            if (cart.length === 0) {
+                alert('Your cart is empty!');
+                return;
+            }
+            
+            // Generate order number
+            orderNumber++;
+            localStorage.setItem('orderNumber', orderNumber);
+            
+            // Display order confirmation
+            mainContent.style.display = 'none';
+            cartContainer.style.display = 'none';
+            orderConfirmation.style.display = 'block';
+            orderNumberElement.textContent = orderNumber;
+            
+            // Clear cart
+            cart = [];
+            localStorage.removeItem('cart');
+            updateCartCount();
+        }
+
+        // Setup event listeners
+        function setupEventListeners() {
+            // Navigation
+            cartLink.addEventListener('click', function(e) {
+                e.preventDefault();
+                showCart();
+            });
+            
+            backToMenu.addEventListener('click', function(e) {
+                e.preventDefault();
+                showMainContent();
+            });
+            
+            continueShopping.addEventListener('click', function(e) {
+                e.preventDefault();
+                showMainContent();
+            });
+            
+            homeLink.addEventListener('click', function(e) {
+                e.preventDefault();
+                window.scrollTo(0, 0);
+                showMainContent();
+            });
+            
+            menuLink.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.getElementById('menu').scrollIntoView({ behavior: 'smooth' });
+            });
+            
+            menuButton.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.getElementById('menu').scrollIntoView({ behavior: 'smooth' });
+            });
+            
+            // Order buttons
+            placeOrderBtn.addEventListener('click', placeOrder);
+            newOrderBtn.addEventListener('click', showMainContent);
+        }
+    </script>
 </body>
 </html>
