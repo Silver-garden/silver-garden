@@ -4,8 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Our Services | Silver Garden Cafeteria</title>
-    <!-- Favicon -->
-    <link rel="icon" href="assets/img/favicon.png" type="image/png">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Google Fonts -->
@@ -16,11 +14,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <style>
         :root {
-             --primary-color: #6F4E37; 
+            --primary-color: #6F4E37; 
             --secondary-color: #C4A484; 
             --accent-color: #E5B80B;
             --dark-color: #2A2118;
             --light-color: #F9F5F0;
+            --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
         }
         
         body {
@@ -28,22 +27,27 @@
             color: var(--dark-color);
             background-color: var(--light-color);
             overflow-x: hidden;
+            line-height: 1.6;
         }
+        
+        h1, h2, h3, h4, h5 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+        }
+        
         /* Navigation */
         .navbar {
-            background-color:white;
+            background-color: white;
             box-shadow: 0 2px 15px rgba(0,0,0,0.1);
-            padding: 15px 0;
-            height:80px;
+            padding: 12px 0;
+            height: auto;
         }
         
         .logo {
-            height: 70px;
-            transition: all 0.3s ease;
-            font-size: 22px;
-            width:100px;
-            align-items: left;
-            border-radius: 60px 60px 60px 60px;
+            height: 60px;
+            width: 80px;
+            border-radius: 50%;
+            transition: var(--transition);
         }
         
         .navbar-brand img:hover {
@@ -53,13 +57,14 @@
         .nav-link {
             color: var(--dark-color);
             font-weight: 500;
-            font-size:20px;
-            margin: 0 10px;
+            font-size: 18px;
+            margin: 0 8px;
             position: relative;
-            transition: all 0.3s ease;
+            transition: var(--transition);
+            padding: 10px 0 !important;
         }
         
-        .nav-link:hover {
+        .nav-link:hover, .nav-link.active {
             color: var(--primary-color);
         }
         
@@ -74,7 +79,7 @@
             transition: width 0.3s ease;
         }
         
-        .nav-link:hover::after {
+        .nav-link:hover::after, .nav-link.active::after {
             width: 100%;
         }
         
@@ -85,12 +90,12 @@
             background-position: center;
             background-attachment: fixed;
             color: white;
-            padding: 120px 0 80px;
+            padding: 100px 0 60px;
             text-align: center;
         }
         
         .page-header h1 {
-            font-size: 3.5rem;
+            font-size: 2.8rem;
             margin-bottom: 20px;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
         }
@@ -104,7 +109,7 @@
         
         /* Services Section */
         .services-section {
-            padding: 80px 0;
+            padding: 60px 0;
         }
         
         .service-card {
@@ -112,11 +117,10 @@
             border-radius: 10px;
             overflow: hidden;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
+            transition: var(--transition);
             margin-bottom: 30px;
             border: none;
-            height:300px;
-            width:350px
+            height: 100%;
         }
         
         .service-card:hover {
@@ -125,27 +129,35 @@
         }
         
         .service-icon {
-            width: 80px;
-            height: 80px;
+            width: 70px;
+            height: 70px;
             background: var(--primary-color);
             color: white;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: -40px auto 20px;
-            font-size: 30px;
+            margin: -35px auto 20px;
+            font-size: 28px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: var(--transition);
+        }
+        
+        .service-card:hover .service-icon {
+            transform: rotate(15deg);
+            background: var(--accent-color);
         }
         
         .service-card h3 {
             color: var(--primary-color);
             margin-bottom: 15px;
+            font-size: 1.5rem;
         }
         
         .service-card p {
             color: #666;
             margin-bottom: 20px;
+            padding: 0 20px;
         }
         
         .btn-service {
@@ -154,24 +166,154 @@
             border: none;
             padding: 10px 25px;
             border-radius: 50px;
-            transition: all 0.3s ease;
+            transition: var(--transition);
+            font-weight: 500;
+            margin-bottom: 20px;
         }
         
         .btn-service:hover {
             background: var(--secondary-color);
             color: var(--dark-color);
+            transform: translateY(-3px);
+        }
+        
+        /* Features Section */
+        .features-section {
+            background: linear-gradient(to right, var(--light-color), #f0e6d8);
+            padding: 80px 0;
+        }
+        
+        .feature-box {
+            text-align: center;
+            padding: 30px;
+            transition: var(--transition);
+        }
+        
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background: rgba(111, 78, 55, 0.1);
+            color: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 32px;
+            transition: var(--transition);
+        }
+        
+        .feature-box:hover .feature-icon {
+            background: var(--primary-color);
+            color: white;
+            transform: scale(1.1);
+        }
+        
+        .feature-box h4 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        
+        /* Testimonials */
+        .testimonials-section {
+            padding: 80px 0;
+            background: white;
+        }
+        
+        .testimonial-card {
+            background: var(--light-color);
+            border-radius: 10px;
+            padding: 30px;
+            margin: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            position: relative;
+        }
+        
+        .testimonial-card::before {
+            content: "";
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 60px;
+            font-family: Georgia, serif;
+            color: rgba(111, 78, 55, 0.1);
+            line-height: 1;
+        }
+        
+        .testimonial-text {
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+        
+        .client-info {
+            display: flex;
+            align-items: center;
+        }
+        
+        .client-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 15px;
+            overflow: hidden;
+        }
+        
+        .client-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .client-name {
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+        
+        /* Call to Action */
+        .cta-section {
+            background: linear-gradient(rgba(42, 33, 24, 0.8), rgba(42, 33, 24, 0.8)), url('https://images.unsplash.com/photo-1481833761820-0509d3217039?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+        
+        .cta-content {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .cta-btn {
+            background: var(--accent-color);
+            color: var(--dark-color);
+            border: none;
+            padding: 12px 35px;
+            font-weight: 600;
+            border-radius: 50px;
+            transition: var(--transition);
+            font-size: 1.1rem;
+            margin-top: 20px;
+        }
+        
+        .cta-btn:hover {
+            background: white;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
         }
         
         /* Footer */
-      .footer {
+        .footer {
             background: var(--dark-color);
-           color: rgba(255, 255, 255, 0.8);
+            color: rgba(255, 255, 255, 0.8);
             padding: 80px 0 0;
         }
         
         .footer-logo {
-            width: 80px;
+            width: 160px;
             margin-bottom: 20px;
+            border-radius: 50%;
         }
         
         .footer h5 {
@@ -179,6 +321,7 @@
             margin-bottom: 25px;
             position: relative;
             padding-bottom: 15px;
+            font-size: 1.3rem;
         }
         
         .footer h5::after {
@@ -215,16 +358,17 @@
         .footer-contact p {
             display: flex;
             margin-bottom: 15px;
+            align-items: flex-start;
         }
         
         .footer-contact i {
             color: var(--accent-color);
             margin-right: 15px;
             min-width: 20px;
+            margin-top: 4px;
         }
         
-        
-       .social-links {
+        .social-links {
             display: flex;
             margin-top: 20px;
         }
@@ -253,11 +397,12 @@
             margin-top: 60px;
             text-align: center;
         }
+        
         /* Back to top button */
         .back-to-top {
             position: fixed;
-            bottom: 30px;
-            right: 30px;
+            bottom: 25px;
+            right: 25px;
             width: 50px;
             height: 50px;
             background: var(--primary-color);
@@ -270,7 +415,8 @@
             z-index: 99;
             opacity: 0;
             visibility: hidden;
-            transition: all 0.3s ease;
+            transition: var(--transition);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
         }
         
         .back-to-top.active {
@@ -281,244 +427,102 @@
         .back-to-top:hover {
             background: var(--secondary-color);
             color: var(--dark-color);
-        }
-        /* Shopping Cart Styles */
-        .cart-container {
-            display: none;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
+            transform: translateY(-5px);
         }
         
-        .cart-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 30px;
-            padding-bottom: 15px;
-            border-bottom: 2px solid var(--accent-color);
+        /* Responsive Adjustments */
+        @media (max-width: 991px) {
+            .page-header {
+                padding: 80px 0 50px;
+            }
+            
+            .page-header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .nav-link {
+                font-size: 16px;
+                margin: 0 6px;
+            }
+            
+            .logo {
+                height: 55px;
+                width: 75px;
+            }
+            
+            .feature-box {
+                padding: 20px;
+            }
         }
         
-        .cart-title {
-            font-size: 2rem;
-            color: var(--primary-color);
+        @media (max-width: 768px) {
+            .page-header {
+                padding: 70px 0 40px;
+            }
+            
+            .page-header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .service-icon {
+                width: 60px;
+                height: 60px;
+                font-size: 24px;
+                margin: -30px auto 15px;
+            }
+            
+            .service-card h3 {
+                font-size: 1.3rem;
+            }
+            
+            .features-section, .testimonials-section {
+                padding: 60px 0;
+            }
+            
+            .cta-section {
+                padding: 80px 0;
+            }
+            
+            .footer {
+                padding: 60px 0 0;
+            }
         }
         
-        .cart-items {
-            margin-bottom: 30px;
-        }
-        
-        .cart-item {
-            display: flex;
-            align-items: center;
-            padding: 20px;
-            background: white;
-            border-radius: 10px;
-            margin-bottom: 15px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-        }
-        
-        .cart-item-image {
-            width: 100px;
-            height: 100px;
-            border-radius: 10px;
-            overflow: hidden;
-            margin-right: 20px;
-        }
-        
-        .cart-item-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        
-        .cart-item-details {
-            flex: 1;
-        }
-        
-        .cart-item-name {
-            font-size: 1.2rem;
-            font-weight: 600;
-            color: var(--primary-color);
-            margin-bottom: 5px;
-        }
-        
-        .cart-item-price {
-            font-weight: 600;
-            color: var(--dark-color);
-            margin-bottom: 10px;
-        }
-        
-        .cart-item-controls {
-            display: flex;
-            align-items: center;
-        }
-        
-        .quantity-btn {
-            width: 30px;
-            height: 30px;
-            background: var(--light-color);
-            border: none;
-            border-radius: 5px;
-            font-size: 1.2rem;
-            cursor: pointer;
-        }
-        
-        .quantity-input {
-            width: 50px;
-            height: 30px;
-            text-align: center;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            margin: 0 10px;
-        }
-        
-        .remove-btn {
-            background: #ff6b6b;
-            color: white;
-            border: none;
-            padding: 5px 15px;
-            border-radius: 5px;
-            cursor: pointer;
-            margin-left: 15px;
-            transition: all 0.3s;
-        }
-        
-        .remove-btn:hover {
-            background: #ff5252;
-        }
-        
-        .cart-summary {
-            background: white;
-            border-radius: 10px;
-            padding: 25px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-        }
-        
-        .summary-row {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 15px;
-            padding-bottom: 10px;
-            border-bottom: 1px dashed #ddd;
-        }
-        
-        .total-row {
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: var(--primary-color);
-            margin-top: 20px;
-            padding-top: 10px;
-            border-top: 2px solid var(--accent-color);
-        }
-        
-        .cart-actions {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 30px;
-        }
-        
-        .cart-btn {
-            padding: 12px 30px;
-            border: none;
-            border-radius: 5px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-        
-        .continue-btn {
-            background: #ddd;
-            color: var(--dark-color);
-        }
-        
-        .continue-btn:hover {
-            background: #ccc;
-        }
-        
-        .checkout-btn {
-            background: var(--primary-color);
-            color: white;
-        }
-        
-        .checkout-btn:hover {
-            background: #5a3c2a;
-            transform: translateY(-2px);
-        }
-        
-        .cart-icon {
-            position: relative;
-            margin-left: 20px;
-        }
-        
-        .cart-count {
-            position: absolute;
-            top: -8px;
-            right: -8px;
-            background: var(--accent-color);
-            color: white;
-            border-radius: 50%;
-            width: 22px;
-            height: 22px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.8rem;
-            font-weight: bold;
-        }
-        
-        .back-to-menu {
-            display: block;
-            margin-bottom: 20px;
-            color: var(--primary-color);
-            font-weight: 600;
-            cursor: pointer;
-        }
-        
-        .back-to-menu i {
-            margin-right: 5px;
-        }
-        
-        .empty-cart {
-            text-align: center;
-            padding: 50px 20px;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-        }
-        
-        .empty-cart i {
-            font-size: 4rem;
-            color: #ddd;
-            margin-bottom: 20px;
-        }
-        
-        .order-confirmation {
-            display: none;
-            text-align: center;
-            padding: 50px;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 3px 15px rgba(0,0,0,0.1);
-            margin: 30px auto;
-            max-width: 600px;
-        }
-        
-        .order-confirmation i {
-            font-size: 4rem;
-            color: #4CAF50;
-            margin-bottom: 20px;
-        }
-        
-        .confirmation-title {
-            font-size: 2rem;
-            color: var(--primary-color);
-            margin-bottom: 20px;
-        }
-        
-        .confirmation-message {
-            margin-bottom: 30px;
-            font-size: 1.1rem;
+        @media (max-width: 576px) {
+            .page-header {
+                padding: 60px 0 30px;
+            }
+            
+            .page-header h1 {
+                font-size: 1.8rem;
+            }
+            
+            .nav-link {
+                font-size: 15px;
+                margin: 0 4px;
+            }
+            
+            .logo {
+                height: 50px;
+                width: 70px;
+            }
+            
+            .service-card {
+                margin-bottom: 20px;
+            }
+            
+            .btn-service {
+                padding: 8px 20px;
+                font-size: 14px;
+            }
+            
+            .back-to-top {
+                width: 45px;
+                height: 45px;
+                font-size: 18px;
+                bottom: 20px;
+                right: 20px;
+            }
         }
     </style>
 </head>
@@ -526,23 +530,25 @@
    <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light sticky-top">
         <div class="container">
-            <img src="logo.png" alt="Silver Garden Cafeteria" class="logo">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <a class="navbar-brand" href="#">
+                <img src="Brown%20and%20Blue%20Illustrative%20Coffee%20Shop%20Logo_20250619_121819_0000.png" alt="Silver Garden Cafeteria" class="logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html" id="home-link">Home</a>
+                        <a class="nav-link" href="web2.html" id="home-link">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html#menu" id="menu-link">Menu</a>
+                        <a class="nav-link" href="#menu" id="menu-link">Menu</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="about.html">About Us</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="services.html">Services</a>
+                        <a class="nav-link active" href="services.html">Services</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="contact.html">Contact</a>
@@ -557,6 +563,7 @@
             </div>
         </div>
     </nav>
+    
     <!-- Header Section -->
     <header class="page-header">
         <div class="container">
@@ -577,9 +584,8 @@
                         </div>
                         <div class="card-body text-center">
                             <h3>Fine Dining</h3>
-                            <p>Experience our fine dining service with carefully crafted menus and service in an elegant atmosphere.</p>
-                            <br>
-                            <a href="" class="btn btn-service">Explore</a>
+                            <p>Experience our exquisite fine dining service with carefully crafted menus and impeccable service in an elegant atmosphere.</p>
+                            <a href="#" class="btn btn-service">Explore</a>
                         </div>
                     </div>
                 </div>
@@ -591,9 +597,8 @@
                         </div>
                         <div class="card-body text-center">
                             <h3>Special Events</h3>
-                            <p>Host your memorable events with our catering services, from weddings to corporate gatherings.</p>
-                            <br>
-                            <a href="" class="btn btn-service">Learn More</a>
+                            <p>Host your memorable events with our premium catering services, from weddings to corporate gatherings.</p>
+                            <a href="#" class="btn btn-service">Learn More</a>
                         </div>
                     </div>
                 </div>
@@ -605,28 +610,178 @@
                         </div>
                         <div class="card-body text-center">
                             <h3>Coffee Experience</h3>
-                            <p>Discover our artisanal coffee selection, expertly brewed by our trained baristas using beans.</p>
-                            <br>
-                            <a href="" class="btn btn-service">View Menu</a>
+                            <p>Discover our artisanal coffee selection, expertly brewed by our trained baristas using premium beans.</p>
+                            <a href="#" class="btn btn-service">View Menu</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row mt-4">
+                <div class="col-md-4">
+                    <div class="service-card animate__animated animate__fadeInUp">
+                        <div class="service-icon">
+                            <i class="fas fa-truck"></i>
+                        </div>
+                        <div class="card-body text-center">
+                            <h3>Home Delivery</h3>
+                            <p>Enjoy our delicious meals in the comfort of your home with our fast and reliable delivery service.</p>
+                            <a href="#" class="btn btn-service">Order Now</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="service-card animate__animated animate__fadeInUp animate__delay-1s">
+                        <div class="service-icon">
+                            <i class="fas fa-calendar-alt"></i>
+                        </div>
+                        <div class="card-body text-center">
+                            <h3>Reservations</h3>
+                            <p>Secure your table in advance for special occasions or group gatherings with our easy reservation system.</p>
+                            <a href="#" class="btn btn-service">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="service-card animate__animated animate__fadeInUp animate__delay-2s">
+                        <div class="service-icon">
+                            <i class="fas fa-gift"></i>
+                        </div>
+                        <div class="card-body text-center">
+                            <h3>Gift Cards</h3>
+                            <p>Share the Silver Garden experience with your loved ones through our beautifully designed gift cards.</p>
+                            <a href="#" class="btn btn-service">Purchase</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+    
+    <!-- Features Section -->
+    <section class="features-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center mb-5">
+                    <h2>Why Choose Our Services</h2>
+                    <div class="divider mx-auto"></div>
+                    <p class="mt-3">Experience the difference with our exceptional offerings</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <h4>Fresh Ingredients</h4>
+                        <p>We use only the freshest, locally-sourced ingredients for all our dishes and beverages.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <i class="fas fa-user-tie"></i>
+                        </div>
+                        <h4>Expert Staff</h4>
+                        <p>Our professionally trained staff provides attentive service to make your experience memorable.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <i class="fas fa-award"></i>
+                        </div>
+                        <h4>Quality Assurance</h4>
+                        <p>Consistent quality in every dish, prepared with passion and attention to detail.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center mb-5">
+                    <h2>What Our Customers Say</h2>
+                    <div class="divider mx-auto"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="testimonial-card">
+                        <p class="testimonial-text">The catering service for our wedding was exceptional! The food was delicious and the presentation was beautiful. Our guests couldn't stop talking about it.</p>
+                        <div class="client-info">
+                            <div class="client-avatar">
+                                <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Priya Sharma">
+                            </div>
+                            <div>
+                                <div class="client-name">Priya Sharma</div>
+                                <div>Wedding Client</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="testimonial-card">
+                        <p class="testimonial-text">The coffee experience at Silver Garden is unmatched in Malout. As a coffee enthusiast, I appreciate their attention to detail and quality beans.</p>
+                        <div class="client-info">
+                            <div class="client-avatar">
+                                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Raj Patel">
+                            </div>
+                            <div>
+                                <div class="client-name">Raj Patel</div>
+                                <div>Regular Customer</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="testimonial-card">
+                        <p class="testimonial-text">We hosted our corporate event here and were extremely impressed with the service and food quality. The staff went above and beyond to make it successful.</p>
+                        <div class="client-info">
+                            <div class="client-avatar">
+                                <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Neha Gupta">
+                            </div>
+                            <div>
+                                <div class="client-name">Neha Gupta</div>
+                                <div>Corporate Client</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Call to Action -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Experience Our Services?</h2>
+                <p class="lead">Book a table or inquire about our catering services today</p>
+                <a href="contact.html" class="btn cta-btn">Contact Us Now</a>
+            </div>
+        </div>
+    </section>
+    <br><br><br>
 
    <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <div class="row g-5">
+            <div class="row g-4">
                 <div class="col-lg-4 col-md-6">
-                    <img src="logo.png" alt="Logo" class="footer-logo" style="border-radius: 100px 100px 100px 100px; height:200px;width: 200px;">
-                    <h2>Silver Garden Cafeteria</h2>
-                    <span></span>
+                    <img src="Brown%20and%20Blue%20Illustrative%20Coffee%20Shop%20Logo_20250619_121819_0000.png" alt="Logo" class="footer-logo">
+                    <h3>Silver Garden Cafeteria</h3>
+                    <p class="text-white mt-2">Where every cup tells a story</p>
                     <div class="social-links">
-                        <a href="https://www.facebook.com"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://www.twiter.com"><i class="fab fa-twitter"></i></a>
-                        <a href="https://www.instagram.com"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.facebook.com" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.twitter.com" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
                 
@@ -648,8 +803,8 @@
                         <li><a href="#menu">Mango Shake</a></li>
                         <li><a href="#menu">Cappuccino</a></li>
                         <li><a href="#menu">Cold Coffee</a></li>
-                        <li><a href="#menu">Soya chaap</a></li>
-                        <li><a href="#menu">Spring rolls</a></li>
+                        <li><a href="#menu">Soya Chaap</a></li>
+                        <li><a href="#menu">Spring Rolls</a></li>
                     </ul>
                 </div>
                 
@@ -677,7 +832,7 @@
             </div>
             
             <div class="copyright">
-                <marquee><p>&copy; 2023 Silver Garden Cafeteria. All Rights Reserved | Designed with <i class="fas fa-heart" style="color: #e25555;"></i> in Malout</p></marquee>
+                <p>&copy; 2023 Silver Garden Cafeteria. All Rights Reserved | Designed with <i class="fas fa-heart" style="color: #e25555;"></i> in Malout</p>
             </div>
         </div>
     </footer>
@@ -702,6 +857,15 @@
         $('.back-to-top').click(function(e) {
             e.preventDefault();
             $('html, body').animate({scrollTop: 0}, '300');
+        });
+        
+        // Service card animations
+        $(document).ready(function() {
+            $('.service-card').each(function(i) {
+                $(this).delay(i * 200).queue(function() {
+                    $(this).addClass('animate__fadeInUp');
+                });
+            });
         });
     </script>
 </body>
