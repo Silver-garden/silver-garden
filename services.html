@@ -269,6 +269,251 @@
             color: var(--primary-color);
             margin-bottom: 5px;
         }
+        /* Shopping Cart */
+        .cart-container {
+            display: none;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 15px;
+        }
+        
+        .cart-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid var(--accent-color);
+        }
+        
+        .cart-title {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+        }
+        
+        .cart-items {
+            margin-bottom: 25px;
+        }
+        
+        .cart-item {
+            display: flex;
+            align-items: center;
+            padding: 18px;
+            background: white;
+            border-radius: 10px;
+            margin-bottom: 12px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+        }
+        
+        .cart-item-image {
+            width: 90px;
+            height: 90px;
+            border-radius: 8px;
+            overflow: hidden;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+        
+        .cart-item-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .cart-item-details {
+            flex: 1;
+        }
+        
+        .cart-item-name {
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+        
+        .cart-item-price {
+            font-weight: 600;
+            color: var(--dark-color);
+            margin-bottom: 8px;
+        }
+        
+        .cart-item-controls {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .quantity-btn {
+            width: 28px;
+            height: 28px;
+            background: var(--light-color);
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            cursor: pointer;
+        }
+        
+        .quantity-input {
+            width: 45px;
+            height: 28px;
+            text-align: center;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin: 0 8px;
+        }
+        
+        .remove-btn {
+            background: #ff6b6b;
+            color: white;
+            border: none;
+            padding: 4px 12px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-left: 12px;
+            transition: var(--transition);
+            font-size: 0.9rem;
+        }
+        
+        .remove-btn:hover {
+            background: #ff5252;
+        }
+        
+        .cart-summary {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+        }
+        
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 12px;
+            padding-bottom: 8px;
+            border-bottom: 1px dashed #ddd;
+        }
+        
+        .total-row {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-top: 18px;
+            padding-top: 8px;
+            border-top: 2px solid var(--accent-color);
+        }
+        
+        .cart-actions {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 25px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .cart-btn {
+            padding: 10px 25px;
+            border: none;
+            border-radius: 5px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            flex: 1;
+            min-width: 180px;
+        }
+        
+        .continue-btn {
+            background: #ddd;
+            color: var(--dark-color);
+        }
+        
+        .continue-btn:hover {
+            background: #ccc;
+        }
+        
+        .checkout-btn {
+            background: var(--primary-color);
+            color: white;
+        }
+        
+        .checkout-btn:hover {
+            background: #5a3c2a;
+            transform: translateY(-2px);
+        }
+        
+        .cart-icon {
+            position: relative;
+            margin-left: 15px;
+        }
+        
+        .cart-count {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background: var(--accent-color);
+            color: white;
+            border-radius: 50%;
+            width: 22px;
+            height: 22px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+        
+        .back-to-menu {
+            display: block;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+            font-weight: 600;
+            cursor: pointer;
+        }
+        
+        .back-to-menu i {
+            margin-right: 5px;
+        }
+        
+        .empty-cart {
+            text-align: center;
+            padding: 40px 15px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+        }
+        
+        .empty-cart i {
+            font-size: 3.5rem;
+            color: #ddd;
+            margin-bottom: 15px;
+        }
+        
+        .order-confirmation {
+            display: none;
+            text-align: center;
+            padding: 40px 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+            margin: 25px auto;
+            max-width: 600px;
+        }
+        
+        .order-confirmation i {
+            font-size: 3.5rem;
+            color: #4CAF50;
+            margin-bottom: 15px;
+        }
+        
+        .confirmation-title {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        
+        .confirmation-message {
+            margin-bottom: 25px;
+            font-size: 1.05rem;
+        }
         
         /* Call to Action */
         .cta-section {
