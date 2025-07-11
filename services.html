@@ -34,37 +34,29 @@
             font-family: 'Playfair Display', serif;
             font-weight: 600;
         }
-        
-        /* Navigation */
+       /* Navigation */
         .navbar {
             background-color: white;
             box-shadow: 0 2px 15px rgba(0,0,0,0.1);
-            padding: 12px 0;
-            height: auto;
+            padding: 0.8rem 0;
         }
         
         .logo {
             height: 60px;
-            width: 80px;
             border-radius: 50%;
-            transition: var(--transition);
-        }
-        
-        .navbar-brand img:hover {
-            transform: scale(1.05);
+            transition: all 0.3s ease;
         }
         
         .nav-link {
             color: var(--dark-color);
             font-weight: 500;
-            font-size: 18px;
-            margin: 0 8px;
+            margin: 0 0.5rem;
             position: relative;
-            transition: var(--transition);
-            padding: 10px 0 !important;
+            transition: all 0.3s ease;
+            font-size: 1rem;
         }
         
-        .nav-link:hover, .nav-link.active {
+        .nav-link:hover {
             color: var(--primary-color);
         }
         
@@ -79,10 +71,18 @@
             transition: width 0.3s ease;
         }
         
-        .nav-link:hover::after, .nav-link.active::after {
+        .nav-link:hover::after {
             width: 100%;
         }
         
+        .navbar-toggler {
+            border: none;
+            padding: 0.25rem;
+        }
+        
+        .navbar-toggler:focus {
+            box-shadow: none;
+        }
         /* Header Section */
         .page-header {
             background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
